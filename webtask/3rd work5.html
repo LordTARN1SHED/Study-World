@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>网上课程</title>
+	<link rel="stylesheet" type="text/css" href="fzx.css">
+</head>
+<style>
+	body {
+		background-image: url('bg.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+
+<body align="center" style="color: rgb(255, 255, 255);font-family:微软雅黑">
+	<h1 class="H">学习world</h1>
+
+	<div class="nav" height="50px" style=font-family:华文新魏>
+		<a href="resume.php" class="navbox" align="center">个人信息</a>
+		<a href="#" class="navbox" align="center">网上课程</a>
+		<a href="photographing.html" class="navbox" align="center">文件传输</a>
+	</div>
+	<nav class="nnaa2">
+		<ul class="uull">
+			<li style="padding: 30px;">
+				<h3 align="center" style="color: rgb(104, 104, 104)">目录</h3>
+			</li>
+			<li class="llii"><a class="aa" href="#1">高等数学</a></li>
+			<li class="llii"><a class="aa" href="#2">线性代数</a></li>
+			<li class="llii"><a class="aa" href="#3">概率论</a></li>
+			<li class="llii"><a class="aa" href="#4">微积分</a></li>
+			<li class="llii"><a class="aa" href="#5">数学分析</a></li>
+
+		</ul>
+	</nav>
+	<div>
+		<div class="border">
+			<div class="turn">
+				<div class="img" style="z-index: 1;"><img src="fzx/课程照片/1.jpg" width="400" height="300"></div>
+				<div class="img"><img src="fzx/课程照片/2.jpg" width="400" height="300"></div>
+				<div class="img"><img src="fzx/课程照片/3.jpg" width="400" height="300"></div>
+				<div class="img"><img src="fzx/课程照片/4.jpg" width="400" height="300"></div>
+				<div class="img"><img src="fzx/课程照片/5.jpg" width="400" height="300"></div>
+				<div class="img"><img src="fzx/课程照片/6.jpg" width="400" height="300"></div>
+				<div class="left">&lt;</div>
+				<div class="right">&gt;</div>
+				<div class="point">
+					<ul>
+						<li class="li-point" style="background-color: white;"></li>
+						<li class="li-point"></li>
+						<li class="li-point"></li>
+						<li class="li-point"></li>
+						<li class="li-point"></li>
+						<li class="li-point"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<table align="center" width="900" height="1000" ;
+			style="position: absolute; top: 132.5px; background-color: rgba(255, 255, 255, 0.9);font-family:宋体;margin-left: 250px">
+			<tr>
+				<td align="left">
+					<h1 style="color: rgb(24, 88, 183);font-family:华文新魏;font-size: 4em;">网上课程</h1><br /><br /><br /><br />
+
+
+					<h2 class="H2" id="1">-高等数学</h2>
+					
+					<video src="fzx/课程视频/1.mp4" width="900" height="522"  controls></video><br /><br /><br /><br /><br /><br />
+
+
+					<h2 class="H2" id="2">-线性代数</h2>
+					
+					<video src="fzx/课程视频/2.mp4" width="900" height="522"  controls></video><br /><br /><br /><br /><br /><br />
+
+
+					<h2 class="H2" id="3">-概率论</h2>
+					
+					<video src="fzx/课程视频/3.mp4" width="900" height="522"  controls></video><br /><br /><br /><br /><br /><br />
+
+
+					<h2 class="H2" id="4">-微积分</h2>
+					
+					<video src="fzx/课程视频/4.mp4" width="900" height="522"  controls></video><br /><br /><br /><br /><br /><br />
+
+
+					<h2 class="H2" id="5">-数学分析</h2>
+					
+					<video src="fzx/课程视频/5.mp4" width="900" height="522"  controls></video><br /><br /><br /><br /><br /><br />
+
+
+					<p align="center">
+						<a href="3rd work.html">点此进入注册页面</a>
+						<a href="3rd work2.html">点此进入登录页面</a><br /><br />
+						<h10 style="color: grey;font-family:Times New Roman">copyright--1798224146@qq.com</h10>
+					</p>
+
+				</td>
+			</tr>
+
+		</table>
+
+		<br><br>
+
+</body>
+
+<script>
+	// // 隐藏前一张图片，显示当前图片
+	// previousImage.style.opacity = "0";
+	// currentImage.style.opacity = "1";
+	var imgs = document.getElementsByClassName("img"); //获取所有class=“img”的元素
+	var index = 0;
+	restart();
+	var timer;
+
+	function restart() {
+		timer = setInterval(function () {
+			index++;
+			if (index == imgs.length) index = 0;
+			for (var i = 0; i < imgs.length; i++) {
+				points[i].style.cssText = "background-color:gray";
+				imgs[i].style.opacity = "0"; //将所有图片透明度渐变为0
+			}
+			imgs[index].style.opacity = "1"; //将需要显示的图片透明度渐变为1
+			points[index].style.cssText = "background-color:white";
+		}, 4000) // 计时器:每4000ms轮播一次图片
+	}
+
+	var left = document.querySelector(".left");
+	var right = document.querySelector(".right");
+	left.onclick = function () {
+		clearInterval(timer);
+		index--;
+		if (index < 0) index = imgs.length - 1;
+		for (var i = 0; i < imgs.length; i++) {
+			imgs[i].style.opacity = "0"; //将所有图片透明度渐变为0
+			points[i].style.cssText = "background-color:gray";
+		}
+		imgs[index].style.opacity = "1"; //将需要显示的图片透明度渐变为1
+		points[index].style.cssText = "background-color:white";
+		restart();
+	}
+	right.onclick = function () {
+		clearInterval(timer);
+		index++;
+		if (index == imgs.length) index = 0;
+		for (var i = 0; i < imgs.length; i++) {
+			imgs[i].style.opacity = "0"; //将所有图片透明度渐变为0
+			points[i].style.cssText = "background-color:gray";
+		}
+		imgs[index].style.opacity = "1"; //将需要显示的图片透明度渐变为1
+		points[index].style.cssText = "background-color:white";
+		restart();
+	}
+
+	var points = document.getElementsByClassName("li-point");
+	points[0].onclick = function () {
+		clearInterval(timer);
+		index = 0;
+		for (var i = 0; i < imgs.length; i++) {
+			imgs[i].style.opacity = "0"; //将所有图片透明度渐变为0
+			points[i].style.cssText = "background-color:gray";
+		}
+		imgs[index].style.opacity = "1"; //将需要显示的图片透明度渐变为1
+		points[index].style.cssText = "background-color:white";
+		restart();
+	}
+	points[1].onclick = function () {
+		clearInterval(timer);
+		index = 1;
+		for (var i = 0; i < imgs.length; i++) {
+			imgs[i].style.opacity = "0"; //将所有图片透明度渐变为0
+			points[i].style.cssText = "background-color:gray";
+		}
+		imgs[index].style.opacity = "1"; //将需要显示的图片透明度渐变为1
+		points[index].style.cssText = "background-color:white";
+		restart();
+	}
+	points[2].onclick = function () {
+		clearInterval(timer);
+		index = 2;
+		for (var i = 0; i < imgs.length; i++) {
+			imgs[i].style.opacity = "0"; //将所有图片透明度渐变为0
+			points[i].style.cssText = "background-color:gray";
+		}
+		imgs[index].style.opacity = "1"; //将需要显示的图片透明度渐变为1
+		points[index].style.cssText = "background-color:white";
+		restart();
+	}
+	points[3].onclick = function () {
+		clearInterval(timer);
+		index = 3;
+		for (var i = 0; i < imgs.length; i++) {
+			imgs[i].style.opacity = "0"; //将所有图片透明度渐变为0
+			points[i].style.cssText = "background-color:gray";
+		}
+		imgs[index].style.opacity = "1"; //将需要显示的图片透明度渐变为1
+		points[index].style.cssText = "background-color:white";
+		restart();
+	}
+	points[4].onclick = function () {
+		clearInterval(timer);
+		index = 4;
+		for (var i = 0; i < imgs.length; i++) {
+			imgs[i].style.opacity = "0"; //将所有图片透明度渐变为0
+			points[i].style.cssText = "background-color:gray";
+		}
+		imgs[index].style.opacity = "1"; //将需要显示的图片透明度渐变为1
+		points[index].style.cssText = "background-color:white";
+		restart();
+	}
+	points[5].onclick = function () {
+		clearInterval(timer);
+		index = 5;
+		for (var i = 0; i < imgs.length; i++) {
+			imgs[i].style.opacity = "0"; //将所有图片透明度渐变为0
+			points[i].style.cssText = "background-color:gray";
+		}
+		imgs[index].style.opacity = "1"; //将需要显示的图片透明度渐变为1
+		points[index].style.cssText = "background-color:white";
+		restart();
+	}
+</script>
+
+</html>

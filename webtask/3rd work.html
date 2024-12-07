@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>用户注册</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<style>
+	body {
+		background-image: url('bg.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+</style>
+
+<body align="center" style="color: rgba(255, 255, 255, 0.639);font-family:微软雅黑">
+
+	<h1 style="font-family:华文新魏">用户注册</h1>
+	<hr><br />
+	<table align="center" width="500">
+		<tr>
+			<td></td>
+			<td>
+
+				<form align="left " action="sign.php" method="post" enctype="multipart/form-data"
+					onsubmit="return confirm('确认提交吗？');">
+					用户名　：<input type="text" name="userName" id="userName" placeholder="请输入用户名" required /> <br /><br />
+					邮箱地址：<input type="text" name="emailnum" id="emailnum" required
+						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="请输入有效的邮箱！" placeholder="请输入邮箱地址"
+						required /> <br /><br />
+					密　码　：<input type="password" name="userPwd" id="userPwd" required pattern="[A-Za-z0-9_]{8,16}"
+						title="请输入8-16位由字母数字或下划线组成的密码" placeholder="请输入密码" required /><br /><br />
+					确认密码：<input type="password" name="userRePwd" id="userRePwd" placeholder="请输入确认密码"
+						required /><br /><br />
+					<script>
+						const password1 = document.getElementById("userPwd");
+						const password2 = document.getElementById("userRePwd");
+
+						password2.addEventListener("input", () => {
+							if (password2.value !== password1.value) {
+								password2.setCustomValidity("两次输入密码不一致！");
+							} else {
+								password2.setCustomValidity("");
+							}
+						});
+					</script>
+					真实姓名：<input type="text" name="turename" id="turename" placeholder="请输入真实姓名" required /><br /><br />
+					学　号　：<input type="text" name="schoolnum" id="schoolnum" required pattern="[0-9]{8}"
+						placeholder="请输入学号" title="请输入8位由数字组成的学号" required /><br /><br />
+					性别：<input type="radio" name="sex" value="man" />男
+					<input type="radio" name="sex" value="woman" />女
+					<input type="radio" name="sex" value="else" checked="checked" />其他<br /><br />
+					身份：<input type="radio" name="identit" value="teacher" />老师
+					<input type="radio" name="identit" value="student" />学生
+					<input type="radio" name="identit" value="else" checked="checked" />其他<br /><br />
+					上传头像：<input type="file" accept="image/*" name="headImage" /><br /><br />
+					您的手机：<input type="text" name="phonenum" id="phonenum" pattern="1[3-9][0-9]{9}"
+						title="请输入有效的11位由数字组成的手机号码" placeholder="请输入您的手机号" required /><br /><br />
+					单位名称：<input type="text" name="copname" id="copname" placeholder="请输入单位名称" required /><br /><br />
+					单位地址：<select>
+						<option selected disabled required>请选择省份</option>
+						<option value="beijing">北京</option>
+						<option value="tianjin">天津</option>
+						<option value="hebei">河北</option>
+						<option value="shanxi">山西</option>
+						<option value="neimenggu">内蒙古</option>
+						<option value="liaoning">辽宁</option>
+						<option value="jilin">吉林</option>
+						<option value="heilongjiang">黑龙江</option>
+						<option value="shanghai">上海</option>
+						<option value="jiangsu">江苏</option>
+						<option value="zhejiang">浙江</option>
+						<option value="anhui">安徽</option>
+						<option value="fujian">福建</option>
+						<option value="jiangxi">江西</option>
+						<option value="shandong">山东</option>
+						<option value="henan">河南</option>
+						<option value="hubei">湖北</option>
+						<option value="hunan">湖南</option>
+						<option value="guangdong">广东</option>
+						<option value="guangxi">广西</option>
+						<option value="hainan">海南</option>
+						<option value="chongqing">重庆</option>
+						<option value="sichuan">四川</option>
+						<option value="guizhou">贵州</option>
+						<option value="yunnan">云南</option>
+						<option value="xizang">西藏</option>
+						<option value="shanxi2">陕西</option>
+						<option value="gansu">甘肃</option>
+						<option value="qinghai">青海</option>
+						<option value="ningxia">宁夏</option>
+						<option value="xinjiang">新疆</option>
+						<option value="taiwan">台湾</option>
+						<option value="xianggang">香港</option>
+						<option value="aomen">澳门</option>
+					</select>
+					<select>
+						<option selected disabled>请选择城市</option>
+					</select>
+					<select>
+						<option selected disabled>请选择区</option>
+					</select>
+					<br /><br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input
+						type="text" name="adress" id="adress" placeholder="请输入单位地址" required /><br /><br />
+					您的爱好：<input type="checkbox" name="hobby" value="football" />购物
+					<input type="checkbox" name="hobby" value="football" />影视
+					<input type="checkbox" name="hobby" value="football" />餐饮<br /><br />
+					个性签名：<textarea cols="37" rows="3">
+				</textarea><br /><br />
+					<input type="checkbox" name="agree" value="agree" required /> 已详细阅读并同意<a
+						href="3rd work4.html">注册条款</a>
+					<br /><br />
+					<p align="center">
+						<input class="mybutton" type="submit" value="注册"
+							name="btnSubmit" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						<input class="mybutton" type="reset" value="重置" name="btnReset" /><br /><br />
+					</p>
+				</form>
+			<td></td>
+			</td>
+		</tr>
+	</table>
+	<a href="3rd work2.html">已有账号请点此登录</a><br /><br />
+	<hr><br>
+	<h10 style="color: grey;font-family:Times New Roman">copyright--1798224146@qq.com</h10>
+</body>
+
+</html>
